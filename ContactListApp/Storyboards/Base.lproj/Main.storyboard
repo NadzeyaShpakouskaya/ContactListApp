@@ -113,10 +113,38 @@
                     <view key="view" contentMode="scaleToFill" id="xWZ-d1-3YZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="04Q-a8-rab">
+                                <rect key="frame" x="16" y="104" width="382" height="75"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PhT-qR-acy">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="33.5"/>
+                                        <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="20"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHo-fa-8Li">
+                                        <rect key="frame" x="0.0" y="41.5" width="382" height="33.5"/>
+                                        <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="20"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Q1n-Dl-Xh3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="04Q-a8-rab" firstAttribute="top" secondItem="Q1n-Dl-Xh3" secondAttribute="top" constant="16" id="BVr-5E-dBk"/>
+                            <constraint firstItem="Q1n-Dl-Xh3" firstAttribute="trailing" secondItem="04Q-a8-rab" secondAttribute="trailing" constant="16" id="FA0-83-qn4"/>
+                            <constraint firstItem="04Q-a8-rab" firstAttribute="leading" secondItem="Q1n-Dl-Xh3" secondAttribute="leading" constant="16" id="auo-zC-lpJ"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="eRf-rw-3th"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="eRf-rw-3th"/>
+                    <connections>
+                        <outlet property="emailLabel" destination="fHo-fa-8Li" id="fBT-t3-mIN"/>
+                        <outlet property="phoneLabel" destination="PhT-qR-acy" id="Ibz-Qe-nGU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S47-Us-bMA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

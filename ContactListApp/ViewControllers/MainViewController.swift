@@ -11,11 +11,23 @@ class MainViewController: UITabBarController {
     
     let dataManager = DataManager()
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        dataManager.fetchData()
-        // Do any additional setup after loading the view.
+
+        let contacts = dataManager.fetchData()
+        
+        if let navigationVC = viewControllers?[0] as? UINavigationController {
+            if let defaultVC = navigationVC.topViewController as? DefaultContactListViewController{
+                defaultVC.contacts = contacts }
+        }
+        if let navigationVC = viewControllers?[1] as? UINavigationController {
+            if let detailVC = navigationVC.topViewController as? DetailedContactListViewController{
+                detailVC.contacts = contacts }
+        }
+
     }
+    
     
 
     /*
