@@ -8,10 +8,12 @@
 import UIKit
 
 class MainViewController: UITabBarController {
+    
+    let dataManager = DataManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        dataManager.fetchData()
         // Do any additional setup after loading the view.
     }
     

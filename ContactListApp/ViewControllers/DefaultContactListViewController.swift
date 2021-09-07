@@ -1,5 +1,5 @@
 //
-//  StandartContactListViewController.swift
+//  DefaultContactListViewController.swift
 //  ContactListApp
 //
 //  Created by Nadzeya Shpakouskaya on 07/09/2021.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class StandartContactListViewController: UITableViewController {
+class DefaultContactListViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
