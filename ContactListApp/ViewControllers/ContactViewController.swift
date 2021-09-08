@@ -9,17 +9,21 @@ import UIKit
 
 class ContactViewController: UIViewController {
     
+    // MARK: - IBOutlets
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     
+    // MARK: - Public properties
     var contact: Contact!
     
+    // MARK: - Override methods
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpLabels()
         setUpNavigationBar()
     }
     
+    // MARK: - Private methods
     private func setUpNavigationBar() {
         navigationItem.title = contact.fullName
     }

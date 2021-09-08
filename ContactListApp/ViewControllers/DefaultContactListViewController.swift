@@ -9,14 +9,10 @@ import UIKit
 
 class DefaultContactListViewController: UITableViewController {
     
+    // MARK: - Public properties
     var contacts: [Contact]!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
     // MARK: - Table view data source
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         contacts.count
     }
@@ -29,20 +25,19 @@ class DefaultContactListViewController: UITableViewController {
         var content = cell.defaultContentConfiguration()
         
         content.text = contact.fullName
+        content.textProperties.font = UIFont(name: "MuktaMahee Regular", size: 18)
+            ?? UIFont.systemFont(ofSize: 18)
         cell.contentConfiguration = content
 
         return cell
     }
 
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let contactVC = segue.destination as? ContactViewController else { return }
         guard let indexPath = tableView.indexPathForSelectedRow else { return }
+        
         let selectedContact  = contacts[indexPath.row]
         contactVC.contact = selectedContact
     }
- 
-
 }

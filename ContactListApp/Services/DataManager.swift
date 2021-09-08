@@ -8,17 +8,22 @@
 import Foundation
 
 class DataManager {
+    // MARK: - Private properties
+
+    private var names = ["John", "Tim", "Ted", "Steven", "Anna", "Maria", "Kate", "David", "Mark", "Alex"]
+    private var surnames = ["Smith", "Dow", "Isaacson", "Pennyworth", "Jenkins", "Fill", "Green", "O'Carrol", "Stivenson", "Path"]
+    private var emails = ["aaaa@gmail.com", "bbbbb@gmail.com", "gdjadk@gmail.com", "fjslkdfh@gmail.com", "jflfjkefn@gmail.com", "fejdfv@gmail.com", "gerufvf@gmail.com", "nckdfh@gmail.com", "fvywefjy@gmail.com", " cadghscf@gmail.com" ]
+    private var phones = ["+534757643", "+1682376", "241863458", "+4738957", "+7943569832", "+346785683", "+63894769", "+634798659", "+364816513398", "+523427615"]
+    
+    // MARK: - Initializer
     init() {}
     
-    var names = ["John", "Tim", "Ted", "Steven", "Anna", "Maria", "Kate", "David", "Mark", "Alex"]
-    var surnames = ["Smith", "Dow", "Isaacson", "Pennyworth", "Jenkins", "Fill", "Green", "O'Carrol", "Stivenson", "Path"]
-    var emails = ["aaaa@gmail.com", "bbbbb@gmail.com", "gdjadk@gmail.com", "fjslkdfh@gmail.com", "jflfjkefn@gmail.com", "fejdfv@gmail.com", "gerufvf@gmail.com", "nckdfh@gmail.com", "fvywefjy@gmail.com", " cadghscf@gmail.com" ]
-    var phones = ["+534757643", "+1682376", "241863458", "+4738957", "+7943569832", "+346785683", "+63894769", "+634798659", "+364816513398", "+523427615"]
-    
+    // MARK: - Public methods
     func fetchData() -> [Contact] {
         generateContacts()
     }
     
+    // MARK: - Private methods
     private func generateContacts() -> [Contact] {
         var contacts: [Contact] = []
         
@@ -32,11 +37,16 @@ class DataManager {
             let surname = surnames.removeFirst()
             let email = emails.removeFirst()
             let phone = phones.removeFirst()
-            let contact = Contact(name: name, surname: surname, email: email, phone: phone)
+            
+            let contact = Contact(
+                name: name,
+                surname: surname,
+                email: email,
+                phone: phone
+            )
             contacts.append(contact)
-            print(contact)
         }
-        print("=========>>>> \(contacts)")
+        
         return contacts
     }
 }

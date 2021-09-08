@@ -8,22 +8,24 @@
 import UIKit
 
 class DetailedContactListViewController: UITableViewController {
+    
     // MARK: - Public properties
     var contacts: [Contact]!
-
+    
     // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return contacts.count
+        contacts.count
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        2
     }
-
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "detailedContact", for: indexPath)
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: "detailedContact",
+            for: indexPath
+        )
         
         let contact = contacts[indexPath.section]
         var content = cell.defaultContentConfiguration()
@@ -35,14 +37,15 @@ class DetailedContactListViewController: UITableViewController {
             content.text = contact.phone
             content.image = UIImage(systemName: "phone.fill")
         }
-        
+        content.textProperties.font = UIFont(name: "MuktaMahee Regular", size: 15)
+            ?? UIFont.systemFont(ofSize: 15)
+        content.imageProperties.tintColor = .darkGray
         cell.contentConfiguration = content
         return cell
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let contact = contacts[section]
-        return contact.fullName
+        contacts[section].fullName
     }
-
+    
 }
