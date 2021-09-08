@@ -51,10 +51,17 @@ class DetailedContactListViewController: UITableViewController {
     // MARK: - Table view delegate
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let header = view as! UITableViewHeaderFooterView
-        header.contentView.backgroundColor = .darkGray
-        header.textLabel?.textColor = .white
-        header.textLabel?.font = UIFont(name: "MuktaMahee Bold", size: 18)
+        
+        var contentConfig = header.defaultContentConfiguration()
+        contentConfig.textProperties.font = UIFont(name: "MuktaMahee Bold", size: 18)
             ?? UIFont.systemFont(ofSize: 18)
+        contentConfig.text = contacts[section].fullName
+        contentConfig.textProperties.color = UIColor.white
+        header.contentConfiguration = contentConfig
+        
+        var backgroundConfig = UIBackgroundConfiguration.listPlainHeaderFooter()
+        backgroundConfig.backgroundColor = .systemGray
+        header.backgroundConfiguration = backgroundConfig
     }
     
 }
