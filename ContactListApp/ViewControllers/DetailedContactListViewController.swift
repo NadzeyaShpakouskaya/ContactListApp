@@ -37,7 +37,7 @@ class DetailedContactListViewController: UITableViewController {
             content.text = contact.phone
             content.image = UIImage(systemName: "phone.fill")
         }
-        content.textProperties.font = UIFont(name: "MuktaMahee Regular", size: 15)
+        content.textProperties.font = UIFont(name: "MuktaMahee SemiBold", size: 15)
             ?? UIFont.systemFont(ofSize: 15)
         content.imageProperties.tintColor = .darkGray
         cell.contentConfiguration = content
@@ -46,6 +46,15 @@ class DetailedContactListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         contacts[section].fullName
+    }
+    
+    // MARK: - Table view delegate
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let header = view as! UITableViewHeaderFooterView
+        header.contentView.backgroundColor = .darkGray
+        header.textLabel?.textColor = .white
+        header.textLabel?.font = UIFont(name: "MuktaMahee Bold", size: 18)
+            ?? UIFont.systemFont(ofSize: 18)
     }
     
 }
