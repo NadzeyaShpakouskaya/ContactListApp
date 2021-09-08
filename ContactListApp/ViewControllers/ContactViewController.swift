@@ -22,7 +22,6 @@ class ContactViewController: UIViewController {
     
     private func setUpNavigationBar() {
         navigationItem.title = contact.fullName
-
     }
     
     private func setUpLabels() {
